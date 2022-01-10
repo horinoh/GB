@@ -1,5 +1,9 @@
 #pragma once
 
+#define COUNTOF(x) sizeof(x) / sizeof(x[0])
+
+#define PATTERN(col, mask, bit) (((col) & (mask)) ? 1 : 0) << (bit)
+
 //!< 1バイトで4諧調
 #define COLOR_WHITE 0
 #define COLOR_LGRAY 1

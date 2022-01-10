@@ -7,16 +7,14 @@
 
 void main()
 {
-    puts("Hello World");
-
-    //fixed a;
-
     switch(_cpu) {
         default: puts("UNKNOWN"); break;
         case DMG_TYPE: puts("GB"); break;
         case MGB_TYPE: puts("GBPocket"); break;
         case CGB_TYPE: puts("GBColor"); break;
     }
+    
+    puts("Hello World");
 
     disable_interrupts(); {
         SHOW_BKG;
