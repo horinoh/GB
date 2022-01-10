@@ -5,10 +5,10 @@
 
 #include "../define.h"
 
-#define BK 0
-#define C0 1
-#define C1 2
-#define C2 3
+#define C0 0
+#define C1 1
+#define C2 2
+#define C3 3
 
 #define M0 1
 #define M1 2
@@ -16,48 +16,48 @@
 #define P(c, m, b) PATTERN(c, m, b)
 const uint8_t Patterns[] = {
     //!< パターン 0
-    P(BK, M0, 7) | P(BK, M0, 6) | P(BK, M0, 5) | P(C0, M0, 4) | P(C0, M0, 3) | P(BK, M0, 2) | P(BK, M0, 1) | P(BK, M0, 0),
-    P(BK, M1, 7) | P(BK, M1, 6) | P(BK, M1, 5) | P(C0, M1, 4) | P(C0, M1, 3) | P(BK, M1, 2) | P(BK, M1, 1) | P(BK, M1, 0),
-    P(BK, M0, 7) | P(BK, M0, 6) | P(C0, M0, 5) | P(C0, M0, 4) | P(C0, M0, 3) | P(C0, M0, 2) | P(BK, M0, 1) | P(BK, M0, 0),
-    P(BK, M1, 7) | P(BK, M1, 6) | P(C0, M1, 5) | P(C0, M1, 4) | P(C0, M1, 3) | P(C0, M1, 2) | P(BK, M1, 1) | P(BK, M1, 0),
-    P(BK, M0, 7) | P(C0, M0, 6) | P(C0, M0, 5) | P(C0, M0, 4) | P(C0, M0, 3) | P(C0, M0, 2) | P(C0, M0, 1) | P(BK, M0, 0),
-    P(BK, M1, 7) | P(C0, M1, 6) | P(C0, M1, 5) | P(C0, M1, 4) | P(C0, M1, 3) | P(C0, M1, 2) | P(C0, M1, 1) | P(BK, M1, 0),
-    P(C0, M0, 7) | P(C0, M0, 6) | P(BK, M0, 5) | P(C0, M0, 4) | P(C0, M0, 3) | P(BK, M0, 2) | P(C0, M0, 1) | P(C0, M0, 0),
-    P(C0, M1, 7) | P(C0, M1, 6) | P(BK, M1, 5) | P(C0, M1, 4) | P(C0, M1, 3) | P(BK, M1, 2) | P(C0, M1, 1) | P(C0, M1, 0),
-    P(C0, M0, 7) | P(C0, M0, 6) | P(C0, M0, 5) | P(C0, M0, 4) | P(C0, M0, 3) | P(C0, M0, 2) | P(C0, M0, 1) | P(C0, M0, 0),
-    P(C0, M1, 7) | P(C0, M1, 6) | P(C0, M1, 5) | P(C0, M1, 4) | P(C0, M1, 3) | P(C0, M1, 2) | P(C0, M1, 1) | P(C0, M1, 0),
-    P(BK, M0, 7) | P(BK, M0, 6) | P(C0, M0, 5) | P(BK, M0, 4) | P(BK, M0, 3) | P(C0, M0, 2) | P(BK, M0, 1) | P(BK, M0, 0),
-    P(BK, M1, 7) | P(BK, M1, 6) | P(C0, M1, 5) | P(BK, M1, 4) | P(BK, M1, 3) | P(C0, M1, 2) | P(BK, M1, 1) | P(BK, M1, 0),
-    P(BK, M0, 7) | P(C0, M0, 6) | P(BK, M0, 5) | P(C0, M0, 4) | P(C0, M0, 3) | P(BK, M0, 2) | P(C0, M0, 1) | P(BK, M0, 0),
-    P(BK, M1, 7) | P(C0, M1, 6) | P(BK, M1, 5) | P(C0, M1, 4) | P(C0, M1, 3) | P(BK, M1, 2) | P(C0, M1, 1) | P(BK, M1, 0),
-    P(C0, M0, 7) | P(BK, M0, 6) | P(C0, M0, 5) | P(BK, M0, 4) | P(BK, M0, 3) | P(C0, M0, 2) | P(BK, M0, 1) | P(C0, M0, 0),
-    P(C0, M1, 7) | P(BK, M1, 6) | P(C0, M1, 5) | P(BK, M1, 4) | P(BK, M1, 3) | P(C0, M1, 2) | P(BK, M1, 1) | P(C0, M1, 0),
+    P(C0, M0, 7) | P(C0, M0, 6) | P(C0, M0, 5) | P(C1, M0, 4) | P(C1, M0, 3) | P(C0, M0, 2) | P(C0, M0, 1) | P(C0, M0, 0),
+    P(C0, M1, 7) | P(C0, M1, 6) | P(C0, M1, 5) | P(C1, M1, 4) | P(C1, M1, 3) | P(C0, M1, 2) | P(C0, M1, 1) | P(C0, M1, 0),
+    P(C0, M0, 7) | P(C0, M0, 6) | P(C1, M0, 5) | P(C1, M0, 4) | P(C1, M0, 3) | P(C1, M0, 2) | P(C0, M0, 1) | P(C0, M0, 0),
+    P(C0, M1, 7) | P(C0, M1, 6) | P(C1, M1, 5) | P(C1, M1, 4) | P(C1, M1, 3) | P(C1, M1, 2) | P(C0, M1, 1) | P(C0, M1, 0),
+    P(C0, M0, 7) | P(C1, M0, 6) | P(C1, M0, 5) | P(C1, M0, 4) | P(C1, M0, 3) | P(C1, M0, 2) | P(C1, M0, 1) | P(C0, M0, 0),
+    P(C0, M1, 7) | P(C1, M1, 6) | P(C1, M1, 5) | P(C1, M1, 4) | P(C1, M1, 3) | P(C1, M1, 2) | P(C1, M1, 1) | P(C0, M1, 0),
+    P(C1, M0, 7) | P(C1, M0, 6) | P(C0, M0, 5) | P(C1, M0, 4) | P(C1, M0, 3) | P(C0, M0, 2) | P(C1, M0, 1) | P(C1, M0, 0),
+    P(C1, M1, 7) | P(C1, M1, 6) | P(C0, M1, 5) | P(C1, M1, 4) | P(C1, M1, 3) | P(C0, M1, 2) | P(C1, M1, 1) | P(C1, M1, 0),
+    P(C1, M0, 7) | P(C1, M0, 6) | P(C1, M0, 5) | P(C1, M0, 4) | P(C1, M0, 3) | P(C1, M0, 2) | P(C1, M0, 1) | P(C1, M0, 0),
+    P(C1, M1, 7) | P(C1, M1, 6) | P(C1, M1, 5) | P(C1, M1, 4) | P(C1, M1, 3) | P(C1, M1, 2) | P(C1, M1, 1) | P(C1, M1, 0),
+    P(C0, M0, 7) | P(C0, M0, 6) | P(C1, M0, 5) | P(C0, M0, 4) | P(C0, M0, 3) | P(C1, M0, 2) | P(C0, M0, 1) | P(C0, M0, 0),
+    P(C0, M1, 7) | P(C0, M1, 6) | P(C1, M1, 5) | P(C0, M1, 4) | P(C0, M1, 3) | P(C1, M1, 2) | P(C0, M1, 1) | P(C0, M1, 0),
+    P(C0, M0, 7) | P(C1, M0, 6) | P(C0, M0, 5) | P(C1, M0, 4) | P(C1, M0, 3) | P(C0, M0, 2) | P(C1, M0, 1) | P(C0, M0, 0),
+    P(C0, M1, 7) | P(C1, M1, 6) | P(C0, M1, 5) | P(C1, M1, 4) | P(C1, M1, 3) | P(C0, M1, 2) | P(C1, M1, 1) | P(C0, M1, 0),
+    P(C1, M0, 7) | P(C0, M0, 6) | P(C1, M0, 5) | P(C0, M0, 4) | P(C0, M0, 3) | P(C1, M0, 2) | P(C0, M0, 1) | P(C1, M0, 0),
+    P(C1, M1, 7) | P(C0, M1, 6) | P(C1, M1, 5) | P(C0, M1, 4) | P(C0, M1, 3) | P(C1, M1, 2) | P(C0, M1, 1) | P(C1, M1, 0),
 
     //!< パターン 1
-    P(BK, M0, 7) | P(BK, M0, 6) | P(BK, M0, 5) | P(BK, M0, 4) | P(C1, M0, 3) | P(C1, M0, 2) | P(BK, M0, 1) | P(BK, M0, 0),
-    P(BK, M1, 7) | P(BK, M1, 6) | P(BK, M1, 5) | P(BK, M1, 4) | P(C1, M1, 3) | P(C1, M1, 2) | P(BK, M1, 1) | P(BK, M1, 0),
-    P(BK, M0, 7) | P(BK, M0, 6) | P(BK, M0, 5) | P(BK, M0, 4) | P(C1, M0, 3) | P(BK, M0, 2) | P(BK, M0, 1) | P(BK, M0, 0),
-    P(BK, M1, 7) | P(BK, M1, 6) | P(BK, M1, 5) | P(BK, M1, 4) | P(C1, M1, 3) | P(BK, M1, 2) | P(BK, M1, 1) | P(BK, M1, 0),
-    P(BK, M0, 7) | P(C1, M0, 6) | P(C1, M0, 5) | P(C1, M0, 4) | P(C1, M0, 3) | P(C1, M0, 2) | P(C1, M0, 1) | P(BK, M0, 0),
-    P(BK, M1, 7) | P(C1, M1, 6) | P(C1, M1, 5) | P(C1, M1, 4) | P(C1, M1, 3) | P(C1, M1, 2) | P(C1, M1, 1) | P(BK, M1, 0),
-    P(C1, M0, 7) | P(C1, M0, 6) | P(C1, M0, 5) | P(C1, M0, 4) | P(C1, M0, 3) | P(C1, M0, 2) | P(C1, M0, 1) | P(C1, M0, 0),
-    P(C1, M1, 7) | P(C1, M1, 6) | P(C1, M1, 5) | P(C1, M1, 4) | P(C1, M1, 3) | P(C1, M1, 2) | P(C1, M1, 1) | P(C1, M1, 0),
-    P(C1, M0, 7) | P(BK, M0, 6) | P(C1, M0, 5) | P(C1, M0, 4) | P(C1, M0, 3) | P(C1, M0, 2) | P(C1, M0, 1) | P(C1, M0, 0),
-    P(C1, M1, 7) | P(BK, M1, 6) | P(C1, M1, 5) | P(C1, M1, 4) | P(C1, M1, 3) | P(C1, M1, 2) | P(C1, M1, 1) | P(C1, M1, 0),
-    P(C1, M0, 7) | P(BK, M0, 6) | P(C1, M0, 5) | P(C1, M0, 4) | P(C1, M0, 3) | P(C1, M0, 2) | P(C1, M0, 1) | P(C1, M0, 0),
-    P(C1, M1, 7) | P(BK, M1, 6) | P(C1, M1, 5) | P(C1, M1, 4) | P(C1, M1, 3) | P(C1, M1, 2) | P(C1, M1, 1) | P(C1, M1, 0),
-    P(C1, M0, 7) | P(C1, M0, 6) | P(C1, M0, 5) | P(C1, M0, 4) | P(C1, M0, 3) | P(C1, M0, 2) | P(C1, M0, 1) | P(C1, M0, 0),
-    P(C1, M1, 7) | P(C1, M1, 6) | P(C1, M1, 5) | P(C1, M1, 4) | P(C1, M1, 3) | P(C1, M1, 2) | P(C1, M1, 1) | P(C1, M1, 0),
-    P(BK, M0, 7) | P(C1, M0, 6) | P(C1, M0, 5) | P(C1, M0, 4) | P(C1, M0, 3) | P(C1, M0, 2) | P(C1, M0, 1) | P(BK, M0, 0),
-    P(BK, M1, 7) | P(C1, M1, 6) | P(C1, M1, 5) | P(C1, M1, 4) | P(C1, M1, 3) | P(C1, M1, 2) | P(C1, M1, 1) | P(BK, M1, 0),
+    P(C0, M0, 7) | P(C0, M0, 6) | P(C0, M0, 5) | P(C0, M0, 4) | P(C2, M0, 3) | P(C2, M0, 2) | P(C0, M0, 1) | P(C0, M0, 0),
+    P(C0, M1, 7) | P(C0, M1, 6) | P(C0, M1, 5) | P(C0, M1, 4) | P(C2, M1, 3) | P(C2, M1, 2) | P(C0, M1, 1) | P(C0, M1, 0),
+    P(C0, M0, 7) | P(C0, M0, 6) | P(C0, M0, 5) | P(C0, M0, 4) | P(C2, M0, 3) | P(C0, M0, 2) | P(C0, M0, 1) | P(C0, M0, 0),
+    P(C0, M1, 7) | P(C0, M1, 6) | P(C0, M1, 5) | P(C0, M1, 4) | P(C2, M1, 3) | P(C0, M1, 2) | P(C0, M1, 1) | P(C0, M1, 0),
+    P(C0, M0, 7) | P(C2, M0, 6) | P(C2, M0, 5) | P(C2, M0, 4) | P(C2, M0, 3) | P(C2, M0, 2) | P(C2, M0, 1) | P(C0, M0, 0),
+    P(C0, M1, 7) | P(C2, M1, 6) | P(C2, M1, 5) | P(C2, M1, 4) | P(C2, M1, 3) | P(C2, M1, 2) | P(C2, M1, 1) | P(C0, M1, 0),
+    P(C2, M0, 7) | P(C2, M0, 6) | P(C2, M0, 5) | P(C2, M0, 4) | P(C2, M0, 3) | P(C2, M0, 2) | P(C2, M0, 1) | P(C2, M0, 0),
+    P(C2, M1, 7) | P(C2, M1, 6) | P(C2, M1, 5) | P(C2, M1, 4) | P(C2, M1, 3) | P(C2, M1, 2) | P(C2, M1, 1) | P(C2, M1, 0),
+    P(C2, M0, 7) | P(C0, M0, 6) | P(C2, M0, 5) | P(C2, M0, 4) | P(C2, M0, 3) | P(C2, M0, 2) | P(C2, M0, 1) | P(C2, M0, 0),
+    P(C2, M1, 7) | P(C0, M1, 6) | P(C2, M1, 5) | P(C2, M1, 4) | P(C2, M1, 3) | P(C2, M1, 2) | P(C2, M1, 1) | P(C2, M1, 0),
+    P(C2, M0, 7) | P(C0, M0, 6) | P(C2, M0, 5) | P(C2, M0, 4) | P(C2, M0, 3) | P(C2, M0, 2) | P(C2, M0, 1) | P(C2, M0, 0),
+    P(C2, M1, 7) | P(C0, M1, 6) | P(C2, M1, 5) | P(C2, M1, 4) | P(C2, M1, 3) | P(C2, M1, 2) | P(C2, M1, 1) | P(C2, M1, 0),
+    P(C2, M0, 7) | P(C2, M0, 6) | P(C2, M0, 5) | P(C2, M0, 4) | P(C2, M0, 3) | P(C2, M0, 2) | P(C2, M0, 1) | P(C2, M0, 0),
+    P(C2, M1, 7) | P(C2, M1, 6) | P(C2, M1, 5) | P(C2, M1, 4) | P(C2, M1, 3) | P(C2, M1, 2) | P(C2, M1, 1) | P(C2, M1, 0),
+    P(C0, M0, 7) | P(C2, M0, 6) | P(C2, M0, 5) | P(C2, M0, 4) | P(C2, M0, 3) | P(C2, M0, 2) | P(C2, M0, 1) | P(C0, M0, 0),
+    P(C0, M1, 7) | P(C2, M1, 6) | P(C2, M1, 5) | P(C2, M1, 4) | P(C2, M1, 3) | P(C2, M1, 2) | P(C2, M1, 1) | P(C0, M1, 0),
 };
 #undef P
 #undef M1
 #undef M0
+#undef C3
 #undef C2
 #undef C1
 #undef C0
-#undef BK
 
 const uint8_t Tiles[] = {
     0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
@@ -103,7 +103,7 @@ void main()
         //!< BG パターン
         set_bkg_data(0, COUNTOF(Patterns), Patterns);
 
-        DISPLAY_OFF;{ 
+        DISPLAY_OFF; {
             //!< BG ネームテーブル (マップ)
             set_bkg_tiles(0, 0, COUNTOF(Tiles) >> 5, 32, Tiles);
         } DISPLAY_ON;
@@ -111,7 +111,18 @@ void main()
 
     initrand(0xdeadbeef);
 
+    fixed x = { 0 }, y = { 0 };
     while(1){
         wait_vbl_done();
+
+        const uint8_t KeyState = joypad();
+        const uint8_t Speed = 128;
+        if(KeyState & J_UP) { y.w -= Speed; }
+        if(KeyState & J_RIGHT) { x.w += Speed; }
+        if(KeyState & J_DOWN) { y.w += Speed; }
+        if(KeyState & J_LEFT) { x.w -= Speed; }
+
+        SCX_REG = x.b.h;
+        SCY_REG = y.b.h;
     }
 }
