@@ -106,13 +106,14 @@ void main()
         DISPLAY_OFF; {
             //!< BG ネームテーブル (マップ)
             set_bkg_tiles(0, 0, COUNTOF(Tiles) >> 5, 32, Tiles);
+            //set_bkg_submap(10, 10, 10, 10, bigmap_map, bigmap_mapWidth);
         } DISPLAY_ON;
     } enable_interrupts();
 
     initrand(0xdeadbeef);
 
     fixed x = { 0 }, y = { 0 };
-    while(1){
+    while(1) {
         wait_vbl_done();
 
         const uint8_t KeyState = joypad();
@@ -122,7 +123,11 @@ void main()
         if(KeyState & J_DOWN) { y.w += Speed; }
         if(KeyState & J_LEFT) { x.w -= Speed; }
 
+        #if 1
+        move_bkg(x.b.h, y.b.h);
+        #else
         SCX_REG = x.b.h;
         SCY_REG = y.b.h;
+        #endif
     }
 }
