@@ -108,10 +108,9 @@ void main()
             set_bkg_tiles(0, 0, COUNTOF(Tiles) >> 5, 32, Tiles);
             //set_bkg_submap(10, 10, 10, 10, bigmap_map, bigmap_mapWidth);
         } DISPLAY_ON;
+        
     } enable_interrupts();
-
-    initrand(0xdeadbeef);
-
+    
     fixed x = { 0 }, y = { 0 };
     while(1) {
         wait_vbl_done();
