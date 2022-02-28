@@ -1,0 +1,26 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build GB",
+            "type": "shell",
+            "command": "lcc -Wa-l -Wl-m -Wl-j -o main.gb main.c"
+        },
+        {
+            "label": "Execute GB",
+            "type": "shell",
+            "command": "mGBA main.gb"
+        },
+        {
+            "label": "Build and execute GB",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Build GB",
+                "Execute GB"
+            ]
+        },
+    ]
+}
