@@ -1,0 +1,3 @@
+PALETTE PaletteBG "BG3232.png"
+TILESET PatternBG "BG3232.png" BEST ALL
+MAP MapBG "BG3232.png" PatternBG BEST 0

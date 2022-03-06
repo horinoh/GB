@@ -6,10 +6,10 @@
 
 #include "../define.h"
 
-INCBIN(Patterns, "Pattern.bin")
+INCBIN(Patterns, "res/PatternBG.bin")
 INCBIN_EXTERN(Patterns)
 
-INCBIN(Map, "Map.bin")
+INCBIN(Map, "res/MapBG.bin")
 INCBIN_EXTERN(Map)
 
 void main()

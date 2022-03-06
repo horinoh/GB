@@ -9,6 +9,11 @@
             "command": "lcc -Wa-l -Wl-m -Wl-j -o main.gb main.c"
         },
         {
+            "label": "Convert",
+            "type": "shell",
+            "command": "./Convert.bat"
+        },
+        {
             "label": "Execute GB",
             "type": "shell",
             "command": "mGBA main.gb"
@@ -18,6 +23,7 @@
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
+                "Convert",
                 "Build GB",
                 "Execute GB"
             ]

@@ -7,7 +7,7 @@
 #include "../define.h"
 #include "../gblib.h"
 
-INCBIN(Patterns, "Pattern.bin")
+INCBIN(Patterns, "res/PatternSPRITE.bin")
 INCBIN_EXTERN(Patterns)
 
 void main()
