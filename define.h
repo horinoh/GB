@@ -1,5 +1,7 @@
 #pragma once
 
+typedef unsigned char u8;
+
 #define COUNTOF(x) sizeof(x) / sizeof(x[0])
 #define BIT_ON(x) (1 << x)
 

@@ -10,6 +10,8 @@
 INCBIN(Patterns, "res/PatternSPRITE.bin")
 INCBIN_EXTERN(Patterns)
 
+#include "res/PaletteSprite.txt"
+
 void main()
 {
     Sprite16 sp16[10];
@@ -18,7 +20,8 @@ void main()
         SHOW_SPRITES;
 
         //!< パレット
-        OBP0_REG = OBP1_REG = DEFAULT_PALETTE;
+        //OBP0_REG = OBP1_REG = DEFAULT_PALETTE;
+        OBP0_REG = OBP1_REG = PaletteSPRITE[0];
 
         //!< スプライトパターン
         set_sprite_data(0,  INCBIN_SIZE(Patterns) / 16, Patterns);
