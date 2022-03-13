@@ -6,24 +6,38 @@
 
 #include "../define.h"
 
-INCBIN(Patterns, "res/PatternBG.bin")
+#if 1
+INCBIN(Patterns, "res/sample_PAT.bin")
 INCBIN_EXTERN(Patterns)
-
-INCBIN(Map, "res/MapBG.bin")
+INCBIN(Map, "res/sample_MAP.bin")
 INCBIN_EXTERN(Map)
+#include "res/sample_PAL.txt"
+#define GET_BG_PAL sample_PAL
+#define MAP_W 20
+#define MAP_H 18
+#else
+INCBIN(Patterns, "res/mapchip_PAT.bin")
+INCBIN_EXTERN(Patterns)
+INCBIN(Map, "res/mapchip_MAP.bin")
+INCBIN_EXTERN(Map)
+#include "res/mapchip_PAL.txt"
+#define GET_BG_PAL mapchip_PAL
+#define MAP_W 24
+#define MAP_H 20
+#endif
 
 void main()
 {
     disable_interrupts(); {
         SHOW_BKG;
         //!< BG パレット
-        BGP_REG = DEFAULT_PALETTE;
+        BGP_REG = GET_BG_PAL[0];
         //!< BG パターン
         set_bkg_data(0, INCBIN_SIZE(Patterns) / 16, Patterns);
 
         DISPLAY_OFF; {
             //!< BG ネームテーブル (マップ)
-            set_bkg_tiles(0, 0, 32, 32, Map);
+            set_bkg_tiles(0, 0, MAP_W, MAP_H, Map);
         } DISPLAY_ON;
     } enable_interrupts();
     

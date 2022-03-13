@@ -9,6 +9,11 @@
             "command": "lcc -Wa-l -Wl-m -Wl-j -o main.gb main.c"
         },
         {
+            "label": "Build GBC",
+            "type": "shell",
+            "command": "lcc -Wa-l -Wl-m -Wl-j -Wm-yC -o main.gb main.c", //!< -Wm-yC を付けるとGBC
+        },
+        {
             "label": "Convert",
             "type": "shell",
             "command": "./Convert.bat"

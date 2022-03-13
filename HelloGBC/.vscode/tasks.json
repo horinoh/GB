@@ -6,7 +6,7 @@
         {
             "label": "Build GB",
             "type": "shell",
-            "command": "lcc -Wa-l -Wl-m -Wl-j -o main.gb main.c"
+            "command": "lcc -Wa-l -Wl-m -Wl-j -o main.gb main.c",
         },
         {
             "label": "Build GBC",
@@ -16,15 +16,16 @@
         {
             "label": "Execute GB",
             "type": "shell",
-            "command": "mGBA main.gb"
+            "command": "mGBA main.gb",
         },
         {
             "label": "Build and execute GB",
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "Build GB",
-                "Execute GB"
+                //"Build GB",
+                "Build GBC",
+                "Execute GB",
             ]
         },
     ]

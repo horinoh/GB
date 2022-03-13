@@ -7,10 +7,10 @@
 #include "../define.h"
 #include "../gblib.h"
 
-INCBIN(Patterns, "res/PatternSPRITE.bin")
+INCBIN(Patterns, "res/mario_PAT.bin")
 INCBIN_EXTERN(Patterns)
-
-#include "res/PaletteSprite.txt"
+#include "res/mario_PAL.txt"
+#define GET_SPR_PAL mario_PAL
 
 void main()
 {
@@ -21,7 +21,7 @@ void main()
 
         //!< パレット
         //OBP0_REG = OBP1_REG = DEFAULT_PALETTE;
-        OBP0_REG = OBP1_REG = PaletteSPRITE[0];
+        OBP0_REG = OBP1_REG = GET_SPR_PAL[0];
 
         //!< スプライトパターン
         set_sprite_data(0,  INCBIN_SIZE(Patterns) / 16, Patterns);

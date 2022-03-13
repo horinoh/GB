@@ -6,7 +6,8 @@
     - C:\gbdk\bin を環境変数 Path に通しておく
     - ビルド
         ~~~
-        $lcc -Wa-l -Wl-m -Wl-j -o XXX.gb XXX.c
+        $lcc -Wa-l -Wl-m -Wl-j        -o XXX.gb XXX.c   
+        $lcc -Wa-l -Wl-m -Wl-j -Wm-yC -o XXX.gb XXX.c //!< -Wm-yC を付けると GBC
         ~~~
     - サンプルは gbdk/examples 以下
 
@@ -51,6 +52,10 @@
     ]
     ~~~
  - ターミナル - タスクの実行 - 上記で作成したタスク名("Build GB"等)を選択して実行
+
+## 素材
+
+- [ONE NOTES](https://1-notes.com/map-chip-for-game-boy/)さんのフリー素材を使用させてもらっています
 
 <!--
 表示範囲 
