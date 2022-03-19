@@ -4,19 +4,20 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build GB",
+            "label": "Compile GB",
             "type": "shell",
             "command": "lcc -Wa-l -Wl-m -Wl-j -o main.gb main.c"
         },
         {
-            "label": "Build GBC",
+            "label": "Compile GBC",
             "type": "shell",
             "command": "lcc -Wa-l -Wl-m -Wl-j -Wm-yC -o main.gb main.c", //!< -Wm-yC を付けるとGBC
         },
         {
             "label": "Convert",
             "type": "shell",
-            "command": "./Convert.bat"
+            "command": "..\\ImageConverter\\x64\\Debug\\ImageConverter.exe GB .\\res",
+            //"command": "..\\ImageConverter\\x64\\Release\\ImageConverter.exe GB .\\res",
         },
         {
             "label": "Execute GB",
@@ -24,13 +25,21 @@
             "command": "mGBA main.gb"
         },
         {
-            "label": "Build and execute GB",
+            "label": "Compile and execute GB",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Compile GB",
+                "Execute GB"
+            ]
+        },
+        {
+            "label": "Convert, compile and execute GB",
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
                 "Convert",
-                "Build GB",
-                "Execute GB"
+                "Compile and execute GB",
             ]
         },
     ]

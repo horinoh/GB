@@ -2,6 +2,7 @@
 #include <rand.h>
 
 #include <gb/gb.h>
+//!< [ GBC ]
 #include <gb/cgb.h>
 
 #include "../define.h"
@@ -20,7 +21,7 @@ void main()
     puts("Hello World");
 
     disable_interrupts(); {
-        //!< GBC では CPU を速いモードにすることが可能
+        //!< [ GBC ] CPU を速いモードにすることが可能
         cpu_fast();
         //cpu_slow();
 
@@ -31,13 +32,13 @@ void main()
         SHOW_BKG;
         BGP_REG = DEFAULT_PALETTE;
 
-        //!< GBC カラー設定
-        #if 0
+        //!< [ GBC ] カラー設定
+        #if 1
         set_default_palette();
         #else
         //!< 15 ビットカラー B[0, 31], G[0, 31], R[0, 31]
         //!< -BBB BBGG GGGR RRRR
-         const palette_color_t Data[] = { 
+        const palette_color_t Data[] = { 
             /*RGB_BLACK*/RGB_YELLOW, RGB_RED, RGB_GREEN, RGB_BLUE, 
             RGB_BLACK, RGB_YELLOW, RGB_PINK, RGB_AQUA,
             RGB_BLACK, RGB_CYAN, RGB_PURPLE, RGB_ORANGE,
@@ -50,7 +51,7 @@ void main()
         //!< パレット [0, 7]、各 4 色
         set_bkg_palette(0, sizeof(Data) / sizeof(Data[0]) >> 2, Data);
         //!< スプライトの場合
-        //set_sprite_palette(0, sizeof(Data) / sizeof(Data[0]) >> 2, Data)
+        //set_sprite_palette(0, sizeof(Data) / sizeof(Data[0]) >> 2, Data);
         #endif
 
         DISPLAY_OFF;{ 
@@ -59,7 +60,13 @@ void main()
 
     initrand(0xdeadbeef);
 
+    palette_color_t Pal[] = { 0, 0, 0, 0 };
     while(1) {
-        delay(1000UL);
+        Pal[0] += 1;
+        Pal[3] += 2;
+        Pal[0] &= 0x7fff;
+        Pal[3] &= 0x7fff;
+        set_bkg_palette(0, 1, Pal);
+        delay(100);
     }
 }
